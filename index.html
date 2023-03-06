@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: black;
+      }
+      h1 {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        color: white;
+      }
+
+      .project {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        height: 400px;
+        box-shadow: 2px 2px 5px #ccc;
+        width: 500px;
+        height: fit-content;
+        margin: 20px auto;
+        padding: 20px;
+        margin: 10px;
+      }
+
+      /* CSS */
+      button {
+        padding: 0.6em 2em;
+        border: none;
+        outline: none;
+        color: rgb(255, 255, 255);
+        background: #111;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+
+      button:before {
+        content: "";
+        background: linear-gradient(
+          45deg,
+          #ff0000,
+          #ff7300,
+          #fffb00,
+          #48ff00,
+          #00ffd5,
+          #002bff,
+          #7a00ff,
+          #ff00c8,
+          #ff0000
+        );
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing-button-85 20s linear infinite;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 10px;
+      }
+
+      @keyframes glowing-button-85 {
+        0% {
+          background-position: 0 0;
+        }
+        50% {
+          background-position: 400% 0;
+        }
+        100% {
+          background-position: 0 0;
+        }
+      }
+
+      button:after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #222;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+      }
+
+      .project h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .project p {
+        font-size: 14px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .project img {
+        height: 200px;
+        width: 300px;
+        margin-bottom: 20px;
+      }
+      .row {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My Assignments</h1>
+    <div class="row">
+      <div class="project">
+        <h2>Tribute Page</h2>
+        <img src="tasks/tribute.jpg" alt="Project 1" />
+        <a href="tasks/Tributepage.htm"><button>Demo</button></a>
+        <p>Web page displaying information about person</p>
+      </div>
+      <div class="project">
+        <h2>Table</h2>
+        <img src="tasks/table.jpg" alt="Project 1" />
+        <a href="tasks/Table.htm"><button>Demo</button></a>
+        <p>HTML Table assignment</p>
+      </div>
+      <div class="project">
+        <h2>Login and signup</h2>
+        <img src="tasks/login.jpg" alt="Project 1" />
+        <a href="tasks/login_and _signup.htm"><button>Demo</button></a>
+        <p>Login and Signup page</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="project">
+        <h2>Survey Form</h2>
+        <img src="tasks/survey.jpg" alt="Project 1" />
+        <a href="tasks/TrainingSurvey.htm"><button>Demo</button></a>
+        <p>Form taking information from user</p>
+      </div>
+      <div class="project">
+        <h2>Emi calculator</h2>
+        <img src="tasks/EMI calculator.jpg" alt="Project 1" />
+        <a href="tasks/EmiCalculator.htm"><button>Demo</button></a>
+        <p>Monthly EMI Calculator</p>
+      </div>
+      <div class="project">
+        <h2>Currency Converter</h2>
+        <img src="tasks/currency converter.jpg" alt="Project 1" />
+        <a href="tasks/currencyConverter.htm"><button>Demo</button></a>
+        <p>A currency convertor supporting INR,USD,EUR</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="project">
+        <h2>Arithmetic Calculator</h2>
+        <img src="tasks/calculator.jpg" alt="Project 1" />
+        <a href="tasks/calci.htm"><button>Demo</button></a>
+        <p>Arithematic calculator</p>
+      </div>
+      <div class="project">
+        <h2>Number system converter</h2>
+        <img src="tasks/EMI calculator.jpg" alt="Project 1" />
+        <a href="tasks/numberConverter.htm"><button>Demo</button></a>
+        <p>It is a converter for differnt number systems</p>
+      </div>
+      <div class="project">
+        <h2>Bmi calculator</h2>
+        <img src="tasks/EMI calculator.jpg" alt="Project 1" />
+        <a href="tasks/js-task/bmiCalculator.htm"><button>Demo</button></a>
+        <p>Its a BMI calculator</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="project">
+        <h2>Student Report card</h2>
+        <img src="tasks/calculator.jpg" alt="Project 1" />
+        <a href="tasks/test.html"><button>Demo</button></a>
+        <p>It generates a student report card on input marks</p>
+      </div>
+      <div class="project">
+        <h2>Intrest Calculator</h2>
+        <img src="tasks/calculator.jpg" alt="Project 1" />
+        <a href="tasks/js-task/intrestCalculator.htm"><button>Demo</button></a>
+        <p>it gives intrest amount</p>
+      </div>
+      <div class="project">
+        <h2>RGB converter</h2>
+        <img src="tasks/rgb converter.jpg" alt="Project 1" />
+        <a href="tasks/js-task/intrestCalculator.htm"><button>Demo</button></a>
+        <p>we can get any color by setting rgb values</p>
+      </div>
+    </div>
+  </body>
+</html>
