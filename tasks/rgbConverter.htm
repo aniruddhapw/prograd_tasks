@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RGB Colour Generator</title>
+    <style>
+      .main {
+        width: 345px;
+        height: 300px;
+        background-color: rgb(0, 0, 0);
+        color: white;
+        padding: 10px;
+        margin: 100px auto;
+        border-radius: 3px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      body {
+        background: #d1cecc;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      form {
+        color: white;
+        text-align: center;
+        font-size: 17px;
+        font-weight: 700;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1>RGB Colour Generator</h1>
+      <br />
+      <form>
+        Red:<input
+          type="range"
+          id="red"
+          value="255"
+          min="0"
+          max="255"
+        /><br /><br />
+        Green:<input
+          type="range"
+          id="green"
+          value="255"
+          min="0"
+          max="255"
+        /><br /><br />
+
+        Blue:<input
+          type="range"
+          id="blue"
+          value="255"
+          min="0"
+          max="255"
+        /><br /><br />
+        Result:<input type="text" id="box" /><br />
+      </form>
+    </div>
+    <script>
+      function myColour() {
+        var red = document.getElementById("red").value;
+        var green = document.getElementById("green").value;
+        var blue = document.getElementById("blue").value;
+        var colour = "rgb(" + red + "," + green + "," + blue + ")";
+        document.body.style.backgroundColor = colour;
+        document.getElementById("box").value = colour;
+      }
+      document.getElementById("red").addEventListener("input", myColour);
+      document.getElementById("green").addEventListener("input", myColour);
+      document.getElementById("blue").addEventListener("input", myColour);
+    </script>
+  </body>
+</html>

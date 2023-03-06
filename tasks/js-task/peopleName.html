@@ -1,0 +1,48 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        width: 300px;
+        margin: auto;
+      }
+      button {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Names of people</h1>
+      <button onclick="genrate()">Get names</button>
+
+      <div id="names"></div>
+    </div>
+  </body>
+  <script>
+    let genrate = () => {
+      fetch("https://jsonplaceholder.typicode.com/users")
+        .then((response) => response.json())
+        .then((data) => {
+          let names = "";
+          let address = "";
+
+          data.forEach((user) => {
+            names += `<p>${user.name}-${user.address.street},${user.address.suite},${user.address.city}</p>`;
+          });
+
+          document.getElementById("names").innerHTML = `${names}`;
+        })
+        .catch((error) => console.error(error));
+    };
+  </script>
+</html>

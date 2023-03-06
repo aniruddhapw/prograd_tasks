@@ -1,0 +1,119 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      map:hover {
+        background-color: black;
+      }
+      .circle {
+        width: 80px;
+        background-color: red;
+        height: 80px;
+        border-radius: 100px;
+        display: none;
+        position: absolute;
+        margin-top: -420px;
+        margin-left: 610px;
+      }
+      .circle1 {
+        width: 80px;
+        background-color: rgb(255, 251, 0);
+        height: 80px;
+        border-radius: 100px;
+        display: none;
+        position: absolute;
+        margin-top: -340px;
+        margin-left: 610px;
+      }
+      .circle2 {
+        width: 80px;
+        background-color: rgb(81, 255, 0);
+        height: 80px;
+        border-radius: 100px;
+        display: none;
+        position: absolute;
+        margin-top: -265px;
+        margin-left: 610px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="../traficSignal.jpeg" usemap="#traficSignal" alt="" />
+    <map name="traficSignal">
+      <area
+        shape="circle"
+        coords="646,229,32"
+        onclick="red()"
+        id="color"
+        alt="red"
+      />
+      <button class="circle" id="btn"></button>
+      <area
+        shape="circle"
+        coords="646,304,32"
+        onclick="yellow()"
+        id="color1"
+        alt="yellow"
+      />
+      <button class="circle1" id="btn1"></button>
+      <area
+        shape="circle"
+        coords="646,382,32"
+        id="color2"
+        onclick="green()"
+        alt="green"
+      />
+      <button class="circle2" id="btn2"></button>
+    </map>
+    <!-- <button class="circle" id="red"></button> -->
+    <script>
+      function red() {
+        // var button = document.getElementById("#red");
+        console.log("red");
+        //alert("Its red");
+
+        // button.style.display = "block";
+      }
+      var btn = document.getElementById("btn");
+      var btn1 = document.getElementById("btn1");
+      var btn2 = document.getElementById("btn2");
+      var color = document.getElementById("color");
+      var color1 = document.getElementById("color1");
+      var color2 = document.getElementById("color2");
+      color.addEventListener("click", function () {
+        // Show the button
+        btn.style.display = "block";
+      });
+      btn.addEventListener("click", function () {
+        btn.style.display = "none";
+      });
+
+      color1.addEventListener("click", function () {
+        // Show the button
+        btn1.style.display = "block";
+      });
+      btn1.addEventListener("click", function () {
+        btn1.style.display = "none";
+      });
+      color2.addEventListener("click", function () {
+        // Show the button
+        btn2.style.display = "block";
+      });
+      btn2.addEventListener("click", function () {
+        btn2.style.display = "none";
+      });
+      // var red = document.getElementById("red");
+      function yellow() {
+        console.log("yellow");
+        // alert("Its yellow");
+      }
+      function green() {
+        console.log("green");
+        // alert("Its green");
+      }
+    </script>
+  </body>
+</html>

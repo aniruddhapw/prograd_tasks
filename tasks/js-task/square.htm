@@ -1,0 +1,81 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cube Cuberoot and Factorial</title>
+    <style>
+      .form {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        text-align: center;
+        width: 500px;
+        height: auto;
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+      }
+      input {
+        margin-bottom: 10px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      .square {
+        font-size: 100px;
+        font-weight: 500;
+      }
+      .result {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        background-color: black;
+      }
+      p {
+        font-size: 100px;
+        font-weight: 500;
+      }
+    </style>
+    <script>
+      function generateTable() {
+        var num = document.getElementById("num").value;
+        document.write(
+          "<div class='result' style='margin-left: auto;margin-right: auto;display: block; background-color: black;color:white;width:300px;border-radius:10px'>"
+        );
+        document.write(
+          "<p class='square' style='font-size:23px; text-align:center;'>square = " +
+            num * num +
+            "</p>"
+        );
+        document.write(
+          "<p class='square' style='font-size:23px; text-align:center;'>cube = " +
+            num * num * num +
+            "</p>"
+        );
+        let answer = 1;
+
+        for (var i = num; i >= 1; i--) {
+          answer = answer * i;
+        }
+        console.log(answer);
+        document.write(
+          "<p class='square' style='font-size:23px; text-align:center;'>factorial =" +
+            answer +
+            "<br/>"
+        );
+        document.write("</div>");
+      }
+    </script>
+  </head>
+  <body>
+    <div class="form">
+      <form>
+        <label for="num">Enter a number:</label>
+        <input type="number" id="num" />
+        <button onclick="generateTable()">Generate result</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img id="img" src="" alt="" />
+    <button onclick="genrate()">button</button>
+    <script>
+      let genrate = () => {
+        let p = fetch("https://dog.ceo/api/breeds/image/random");
+        p.then((res1) => {
+          return res1.json();
+        })
+          .then((nestedRes) => {
+            document.getElementById("img").src = nestedRes.message;
+          })
+          .catch((res2) => {
+            console.log("catch block" + res2);
+            document.getElementById("img").alt = nestedRes.message;
+          });
+      };
+    </script>
+  </body>
+</html>

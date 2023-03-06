@@ -1,0 +1,131 @@
+<html>
+  <head>
+    <title>Report Card Form</title>
+    <style>
+      .form {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        text-align: center;
+        width: 500px;
+        height: auto;
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+      }
+      #reportCardContainer {
+        text-align: center;
+        padding: 10px;
+      }
+      #reportCardContainer > p {
+        padding: 10px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <h1>Report Card Form</h1>
+
+      <form id="reportForm">
+        <label for="studentName">Student Name:</label>
+        <input type="text" id="studentName" name="studentName" /><br /><br />
+        <label for="science">Science Marks:</label>
+        <input type="text" id="science" name="science" /><br /><br />
+        <label for="maths">Maths Marks:</label>
+        <input type="text" id="maths" name="maths" /><br /><br />
+        <label for="english">English Marks:</label>
+        <input type="text" id="english" name="english" /><br /><br />
+        <label for="history">History:</label>
+        <input type="text" id="history" name="history" /><br /><br />
+        <label for="political">Political Science:</label>
+        <input type="text" id="political" name="political" /><br /><br />
+        <label for="economics">Economics:</label>
+        <input type="text" id="economics" name="economics" /><br /><br />
+
+        <input type="submit" value="Submit" />
+      </form>
+      <a href="test2.htm"><button>Generate Report</button></a>
+      <br /><br />
+      <div id="reportCardContainer"></div>
+    </div>
+    <script>
+      const form = document.querySelector("#reportForm");
+      const studentName = document.querySelector("#studentName");
+      const science = document.querySelector("#science");
+      const maths = document.querySelector("#maths");
+      const english = document.querySelector("#english");
+      const political = document.querySelector("#political");
+      const history2 = document.querySelector("#history");
+      const economics = document.querySelector("#economics");
+
+      const reportCardContainer = document.querySelector(
+        "#reportCardContainer"
+      );
+
+      science.addEventListener("input", (event) => {
+        if (science.value < 0) {
+          alert("enter the valid number");
+        }
+      });
+      maths.addEventListener("input", (event) => {
+        if (maths.value < 0) {
+          alert("enter the valid number");
+        }
+      });
+      english.addEventListener("input", (event) => {
+        if (english.value < 0) {
+          alert("enter the valid number");
+        }
+      });
+      economics.addEventListener("input", (event) => {
+        if (economics.value < 0) {
+          alert("enter the valid number");
+        }
+      });
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        s = parseFloat(science.value);
+        m = parseFloat(maths.value);
+        e = parseFloat(economics.value);
+        p = parseFloat(political.value);
+        h = parseFloat(history2.value);
+        en = parseFloat(english.value);
+        sum = s + m;
+        avg = sum / 5;
+        if (s > 45 && e > 45 && p > 45 && h > 45 && m > 45 && en > 45) {
+          result = "pass";
+        } else {
+          result = "fail";
+        }
+        var grade;
+
+        if (avg >= 80) {
+          grade = "A";
+        } else if (avg > 60 && avg < 80) {
+          grade = "B";
+        } else if (avg >= 40 && avg < 60) {
+          grade = "C";
+        } else {
+          grade = "no grade";
+        }
+        console.log(grade);
+        const report = {
+          studentName: studentName.value,
+          science: science.value,
+          maths: maths.value,
+          economics: economics.value,
+          political: political.value,
+          english: english.value,
+          history: history2.value,
+          result: result,
+          grade: grade,
+        };
+        localStorage.setItem("report", JSON.stringify(report));
+      });
+    </script>
+  </body>
+</html>

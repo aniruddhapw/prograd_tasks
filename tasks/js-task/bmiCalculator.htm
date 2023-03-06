@@ -1,0 +1,79 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        background-color: black;
+        padding: 10px;
+        color: white;
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: space-around;
+        justify-content: center;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        margin-left: 10px;
+      }
+      input {
+        margin: 10px;
+      }
+      #btn {
+        width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+    <script>
+      window.onload = () => {
+        let button = document.querySelector("#btn");
+
+        button.addEventListener("click", calculateBMI);
+      };
+
+      function calculateBMI() {
+        let height = parseInt(document.getElementById("height").value);
+
+        let weight = parseInt(document.getElementById("weight").value);
+
+        let result = document.getElementById("result");
+
+        if (height === "" || isNaN(height))
+          result.innerHTML = "Provide a valid Height!";
+        else if (weight === "" || isNaN(weight))
+          result.innerHTML = "Provide a valid Weight!";
+        else {
+          let bmi = (weight / ((height * height) / 10000)).toFixed(2);
+
+          if (bmi < 18.6)
+            result.innerHTML = `Under Weight : <span>${bmi}</span>`;
+          else if (bmi >= 18.6 && bmi < 24.9)
+            result.innerHTML = `Normal : <span>${bmi}</span>`;
+          else result.innerHTML = `Over Weight : <span>${bmi}</span>`;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <form action="">
+        <label for="weight">Enter Weight (in Kg)</label>
+        <input name="weight" id="weight" type="text" />
+        <label for="height">Enter Height (in CM)</label>
+        <input for="height" id="height" type="text" />
+      </form>
+      <button id="btn" onclick="calculateBMI()">Calculate</button>
+      <p id="result"></p>
+    </div>
+  </body>
+</html>

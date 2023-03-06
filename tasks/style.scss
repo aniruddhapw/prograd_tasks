@@ -1,0 +1,28 @@
+$primary_color:red;
+$secondary_color:blue;
+$third_color:green;
+$font_large:20px;
+$font_xlarge:30px;
+$font_xxlarge:40px;
+@mixin gen_style($color){
+    background-color: green;
+    color: $color;
+    margin-top: 10px;
+}
+h1{
+    background-color: white;
+    color: $primary_color;
+}
+.first{
+    color: $primary_color;
+    font-size: $font_large;
+    @include gen_style($color:rgba(255, 0, 0, 0.929));
+}
+.second{
+    color: $secondary_color;
+    font-size: $font_xlarge;
+}
+.third{
+    color:$third_color;
+    font-size: $font_xxlarge;
+}

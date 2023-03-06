@@ -1,0 +1,75 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .login {
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        border: 2px;
+      }
+      body {
+        background-color: #121212;
+        font-family: Verdana;
+        text-align: center;
+      }
+      form {
+        background-color: #fff;
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 30px 20px;
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+      }
+      .form-control {
+        text-align: left;
+        margin-bottom: 25px;
+      }
+      .form-control label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      .sign_up {
+        margin-top: -100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login">
+      <form action="">
+        <div class="form-control">
+          <label for="email" id="label-email"> Email </label>
+
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+        <div class="form-control">
+          <label for="password" id="label-email"> Password </label>
+
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+
+        <div class="form-control">
+          <button>Login</button>
+        </div>
+      </form>
+      <div class="sign_up"></div>
+      <small>Dont have an account ?</small>
+      
+        <a href="sign_up.htm"><button>Sign Up</button></a>
+      </div>
+    </div>
+  </body>
+</html>

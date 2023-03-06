@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Interest Calculator</title>
+    <style>
+      .calculator {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 500px;
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        padding: 10px;
+        text-align: center;
+      }
+      input {
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <h1>Simple Interest Calculator</h1>
+      <p>
+        Enter the principal amount, rate of interest, and time period to
+        calculate the simple interest:
+      </p>
+      <label>Principal Amount:</label>
+      <input type="number" name="principal" id="principal" />
+      <br />
+      <label>Rate of Interest:</label>
+      <input type="number" id="rate" />
+      <br />
+      <label>Time Period:</label>
+      <input type="number" id="time" />
+      <br />
+      <button onclick="calculate(principal.value, rate.value, time.value)">
+        Calculate
+      </button>
+      <br />
+      <label>Simple Interest:</label>
+      <input type="number" id="interest" disabled />
+    </div>
+    <script>
+      function calculate(principal, rate, time) {
+        console.log(principal);
+        var interest = (principal * rate * time) / 100;
+        var amount = interest + principal;
+        document.getElementById("interest").value = interest;
+      }
+    </script>
+  </body>
+</html>

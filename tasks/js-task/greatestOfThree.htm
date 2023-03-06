@@ -1,0 +1,54 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        background-color: black;
+        padding: 20px;
+        color: white;
+        border-radius: 10px;
+        margin: auto;
+      }
+      input {
+        margin: 5px;
+      }
+      button {
+        width: 100px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <label for="">Enter first number</label>
+      <input id="first" type="number" />
+      <label for="">Enter second number</label>
+      <input id="second" type="number" />
+      <label for="">Enter third number</label>
+      <input id="third" type="number" />
+      <button onclick="find()">Submit</button>
+      <span id="answer"></span>
+    </div>
+    <script>
+      function find() {
+        var a = document.getElementById("first").value;
+        var b = document.getElementById("second").value;
+        var c = document.getElementById("third").value;
+        var temp;
+        var answer = document.getElementById("answer");
+        // answer.innerHTML=(a>b&c)?temp=a:(b>c)?temp=b:temp=c;
+        a > b
+          ? (answer.innerHTML = a + " is the greatest number")
+          : b > a && b > c
+          ? (answer.innerHTML = b + " is the greatest number")
+          : (answer.innerHTML = c + " is the greatest number");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content=
+		"width=device-width, initial-scale=1.0">
+	<title>
+		Prograd Survey
+	</title>
+    <script>
+        function validateForm() {
+          var age = document.getElementById("age").value;
+          if (age <= 0) {
+            alert("Age must be a positive number");
+            return false;
+          }
+          return true;
+        }
+       
+        function showInput() {
+            
+            let selectedOption = document.getElementById("role").value;
+    
+            if (selectedOption === "other") {
+                
+              document.getElementById("textbox").style.display = "block";
+            } else {
+              document.getElementById("textbox").style.display = "none";
+            }
+          }
+    
+    
+      </script>
+	<style>
+		body {
+			background-color: #121212;
+			font-family: Verdana;
+			text-align: center;
+		}
+		form {
+			background-color: #fff;
+			max-width: 500px;
+			margin: 50px auto;
+			padding: 30px 20px;
+			box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+		}
+		.form-control {
+			text-align: left;
+			margin-bottom: 25px;
+		}
+		.form-control label {
+			display: block;
+			margin-bottom: 10px;
+		}
+		.form-control input,
+		.form-control select,
+		.form-control textarea {
+			border: 1px solid #777;
+			border-radius: 2px;
+			font-family: inherit;
+			padding: 10px;
+			display: block;
+			width: 95%;
+		}
+		.form-control input[type="radio"],
+		.form-control input[type="checkbox"] {
+			display: inline-block;
+			width: auto;
+		}
+		button {
+			background-color: rgb(23 57 230);
+			border: 1px solid #faf7f7;
+			border-radius: 2px;
+			font-family: inherit;
+			font-size: 21px;
+            color: #fff;
+			display: block;
+			width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            height: 50px;
+            border-radius: 5px;
+			margin-top: 50px;
+			margin-bottom: 20px;
+		}
+        button:hover{
+            font-size: 23px;
+            width: 52%;
+        }
+        
+	</style>
+</head>
+
+<body>
+    
+
+	
+	<form id="form">
+        <img src="prograd_logo.png" alt="logo" width="200px">
+		
+		<div class="form-control">
+			<label for="name" id="label-name">
+				Name
+			</label>
+
+			
+			<input type="text"
+				id="name"
+				placeholder="Enter your name" required/>
+		</div>
+
+		<div class="form-control">
+			<label for="email" id="label-email" >
+				Email
+			</label>
+
+			
+			<input type="email"
+				id="email"
+				placeholder="Enter your email" required />
+		</div>
+
+		<div class="form-control">
+			<label for="age" id="label-age">
+				Age
+			</label>
+
+			
+			<input type="text"
+				id="age"
+				placeholder="Enter your age" required />
+		</div>
+
+		<div class="form-control">
+			<label for="role" id="label-role">
+				Which option best describes you?
+			</label>
+			
+		
+			<select name="role" id="role" onchange="showInput()"  required>
+                <option value="">Select</option>
+				<option value="student">Student</option>
+				<option value="intern">Intern</option>
+				<option value="professional">
+					Professional
+				</option>
+				<option value="other">Other</option>
+			</select>
+            <div id="textbox" style="display:none; margin-top: 10px">
+                <input type="text" placeholder="Enter role">
+              </div>
+		</div>
+
+		<div class="form-control">
+			<label>
+				Would you recommend Prograd
+				to a friend?
+			</label>
+
+			
+			<label for="recommed-1">
+				<input type="radio"
+					id="recommed-1"
+					name="recommed" required>Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio"
+					id="recommed-2"
+					name="recommed" required>No</input>
+			</label>
+			<label for="recommed-3">
+				<input type="radio"
+					id="recommed-3"
+					name="recommed" required>Maybe</input>
+			</label>
+		</div>
+
+		<div class="form-control">
+			<label>Languages and Frameworks you Know
+				<small>(Check all that apply)</small>
+			</label>
+			
+			<label for="inp-1">
+				<input type="checkbox"
+					name="inp" >C</input></label>
+			<label for="inp-2">
+				<input type="checkbox"
+					name="inp">C++</input></label>
+			<label for="inp-3">
+				<input type="checkbox"
+					name="inp">C#</input></label>
+			<label for="inp-4">
+				<input type="checkbox"
+					name="inp">Java</input></label>
+			<label for="inp-5">
+				<input type="checkbox"
+					name="inp">Python</input></label>
+			<label for="inp-6">
+				<input type="checkbox"
+					name="inp">JavaScript</input></label>
+			<label for="inp-7">
+				<input type="checkbox"
+					name="inp">React</input></label>
+			<label for="inp-7">
+				<input type="checkbox"
+					name="inp">Angular</input></label>
+			<label for="inp-7">
+				<input type="checkbox"
+					name="inp">Django</input></label>
+			<label for="inp-7">
+				<input type="checkbox"
+					name="inp">Spring</input></label>
+		</div>
+
+		<div class="form-control">
+			<label for="comment">
+				Any comments or suggestions
+			</label>
+
+		
+			<textarea name="comment" id="comment"
+				placeholder="Enter your comment here">
+			</textarea>
+		</div>
+
+		
+		<button type="submit" value="submit" onclick="validateForm()">
+			Submit
+		</button>
+	</form>
+</body>
+
+</html>

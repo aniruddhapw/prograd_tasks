@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Typing Speed Test</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+      .container {
+        margin: 50px auto;
+        max-width: 600px;
+        text-align: center;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      p {
+        margin-bottom: 10px;
+      }
+
+      #text {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      #input {
+        padding: 10px;
+        font-size: 18px;
+        width: 100%;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+      }
+
+      #result {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: rgb(255, 253, 253);
+      }
+
+      #start-btn {
+        padding: 10px;
+        font-size: 18px;
+        /* background-color: rgb(0, 0, 0); */
+        /* color: white; */
+        margin-bottom: 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Typing Speed Test</h1>
+      <p>Type the following text:</p>
+      <p id="text"></p>
+      <input type="text" id="input" autocomplete="off" />
+      <p id="result"></p>
+      <button id="start-btn">Start</button>
+    </div>
+
+    <script>
+      let quotes_array = [
+        "Push yourself, because no one else is going to do it for you.",
+        "Failure is the condiment that gives success its flavor.",
+        "Wake up with determination. Go to bed with satisfaction.",
+        "It's going to be hard, but hard does not mean impossible.",
+        "Learning never exhausts the mind.",
+        "The only way to do great work is to love what you do.",
+      ];
+      const text = "The quick brown fox jumps over the lazy dog.";
+      let startTime, endTime, totalTime;
+
+      const input = document.getElementById("input");
+      const textPara = document.getElementById("text");
+      const resultPara = document.getElementById("result");
+      const startBtn = document.getElementById("start-btn");
+      const num = Math.floor(Math.random() * 5);
+      function startTest() {
+        input.value = "";
+        resultPara.innerText = "";
+        textPara.innerText = quotes_array[num];
+        totalTime = 0;
+
+        input.addEventListener("keyup", checkText);
+      }
+
+      function checkText() {
+        const typedText = input.value.trim();
+        if (typedText === quotes_array[num]) {
+          endTime = new Date();
+          const timeTaken = (endTime - startTime) / 1000;
+          totalTime += timeTaken;
+
+          const typedWords = typedText.split(/\s+/).length;
+          const speed = Math.round((typedWords / totalTime) * 60);
+          resultPara.innerText = `You typed ${typedWords} words in ${totalTime.toFixed(
+            2
+          )} seconds. Your typing speed is ${speed} words per minute.`;
+
+          input.removeEventListener("keyup", checkText);
+        } else if (!startTime) {
+          startTime = new Date();
+        }
+      }
+
+      startBtn.addEventListener("click", startTest);
+    </script>
+  </body>
+</html>

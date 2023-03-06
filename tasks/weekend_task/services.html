@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Car Services - Car Website</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Tilt+Prism&display=swap");
+      body {
+        margin: 0;
+        scroll-behavior: smooth;
+        font-family: "Poppins", sans-serif;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        height: fit-content;
+        background-color: black;
+        color: white;
+      }
+      .icon {
+        font-family: "Tilt Prism", cursive;
+        margin-left: 20px;
+        font-size: 20px;
+      }
+      .nav__items {
+        display: flex;
+        justify-content: space-between;
+        margin-right: 100px;
+      }
+      .nav__items > p,
+      a,
+      h3 {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      a:hover {
+        background-color: #717171;
+      }
+      .page_heading {
+        margin-left: 20px;
+      }
+      /* footer */
+      .footer {
+        margin-top: 0;
+        display: flex;
+        color: black;
+        justify-content: space-between;
+        background-color: #717171;
+      }
+      .address {
+        width: 200px;
+        padding: 10px;
+        margin-left: 20px;
+      }
+      .social_media {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        margin-right: 40px;
+      }
+      .social_media > a {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <h3 class="icon">Cars</h3>
+        <nav class="nav__items">
+          <a href="home.html"><p>Home</p></a>
+          <a href="#contact"><p>Services</p></a>
+          <a href="product.html"><p>Products</p></a>
+          <a href="about.html"><p>About</p></a>
+          <a href="#contact"><p>Contact Us</p></a>
+        </nav>
+      </div>
+      <main>
+        <h2 class="page_heading">Our Services</h2>
+        <ul>
+          <li>
+            <h3>Oil Change</h3>
+            <p>
+              We offer oil changes for all types of cars. Our experienced
+              mechanics will change your oil and filter and perform a
+              multi-point inspection to ensure your car is running smoothly.
+            </p>
+          </li>
+          <li>
+            <h3>Tire Rotation</h3>
+            <p>
+              Tire rotation is important for even wear and prolonging the life
+              of your tires. We can rotate your tires and check the air pressure
+              for you.
+            </p>
+          </li>
+          <li>
+            <h3>Brake Inspection</h3>
+            <p>
+              Our mechanics can inspect your brakes and let you know if they
+              need to be serviced or replaced. We offer brake pad replacement,
+              brake rotor resurfacing, and brake fluid flushes.
+            </p>
+          </li>
+          <li>
+            <h3>Battery Replacement</h3>
+            <p>
+              If your car's battery is dead or not holding a charge, we can
+              replace it for you. We offer a variety of batteries to fit your
+              car's make and model.
+            </p>
+          </li>
+        </ul>
+      </main>
+      <section>
+        <div class="footer">
+          <div class="address">
+            <address>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
+              nostrum? Amet nam blanditiis necessitatibus explicabo animi atque
+            </address>
+          </div>
+          <div class="social_media">
+            <a href="">Facebook</a>
+            <a href="">Instagram</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

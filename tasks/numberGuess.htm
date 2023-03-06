@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Number Guessing Game</title>
+
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+      .container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+        background-color: black;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        box-shadow: 5px 5px rgba(0, 0, 0, 0.356);
+        flex-direction: column;
+      }
+      .guessSubmit {
+        margin-top: 10px;
+        margin-left: 90px;
+        margin-right: auto;
+      }
+      .guessSubmit:hover {
+        background-color: black;
+        color: white;
+        border-color: aliceblue;
+      }
+      .count {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Guess The Number</h1>
+      <p>The number is between 1-100, try to guess it!!</p>
+
+      <div class="form">
+        <label for="guessField">Enter a guess: </label>
+        <input type="text" id="guessField" class="guessField" />
+        <input
+          type="submit"
+          value="Submit guess"
+          class="guessSubmit"
+          id="submitguess"
+        />
+      </div>
+      <div id="count" class="count"></div>
+    </div>
+
+    <script type="text/javascript">
+      var y = Math.floor(Math.random() * 100 + 1);
+      let count = document.getElementById("count");
+
+      var guess = 0;
+      var score = 100;
+
+      document.getElementById("submitguess").onclick = function () {
+        var x = document.getElementById("guessField").value;
+        if (guess < 5) {
+          if (x == y) {
+            alert(
+              "CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN " +
+                guess +
+                " GUESS AND YOUR SCORE IS " +
+                score +
+                "POINTS 😍"
+            );
+            count.innerHTML = `Your score is ${score} points`;
+          } else if (x > y) {
+            guess++;
+            alert("NOT RIGHT!! TRY A SMALLER NUMBER 👍");
+            count.innerHTML = `Your number of guess are ${guess} and your score is ${score} points`;
+            score = score - 5;
+          } else {
+            guess++;
+            alert("NOT RIGHT!! TRY A GREATER NUMBER 👍");
+            count.innerHTML = `Your number of guess are ${guess} and your score is ${score} points`;
+            score = score - 5;
+          }
+        } else {
+          alert("You Lost the game");
+        }
+      };
+    </script>
+  </body>
+</html>

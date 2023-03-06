@@ -1,0 +1,53 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: yellow;
+      }
+      h1 {
+        text-align: center;
+        background-color: black;
+        color: white;
+      }
+      p {
+        text-align: center;
+      }
+      .box {
+        background-color: red;
+        border-color: black;
+
+        width: 200px;
+        height: 25px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Current Date and Time</h1>
+    <button class="box">Display time and time</button>
+    <p>Date</p>
+    <span id="date"></span>
+    <p>Time</p>
+    <span id="time"></span>
+
+    <script>
+      function display() {
+        const today = new Date();
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
+
+        let currentDate = `${day}-${month}-${year}`;
+        var date = document.getElementById("date");
+        date.innerHTML = currentDate;
+        document.write(currentDate);
+      }
+    </script>
+  </body>
+</html>

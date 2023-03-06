@@ -1,0 +1,272 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Tilt+Prism&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      header {
+        font-size: 20px;
+      }
+      body {
+        margin: 0;
+        scroll-behavior: smooth;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .icon {
+        font-family: "Tilt Prism", cursive;
+        margin-left: 20px;
+        font-size: 20px;
+      }
+
+      .what_we_do {
+        padding: 20px;
+        text-align: justify;
+        background-color: #717171;
+        margin: 20px;
+        border-radius: 10px;
+      }
+      .image_about {
+        display: flex;
+      }
+      .how_we_do {
+        padding: 20px;
+        text-align: justify;
+        background-color: #717171;
+        margin: 20px;
+        border-radius: 10px;
+      }
+      .text_content {
+        margin-top: auto;
+        margin-bottom: auto;
+        padding: 50px;
+        text-align: justify;
+      }
+      li {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .header {
+        /* border-bottom: 1px solid #e2e8f0; */
+        border-bottom: 1px solid #101112;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        background-color: #101010;
+      }
+      .hamburger {
+        display: none;
+      }
+
+      .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        background-color: #ffffff;
+      }
+      .nav-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 40px;
+      }
+
+      .nav-item {
+        margin-left: 5rem;
+      }
+
+      .nav-link {
+        font-size: 17px;
+        font-weight: 400;
+        color: white;
+      }
+
+      .nav-link:hover {
+        color: white;
+      }
+
+      .nav-logo {
+        font-size: 2.1rem;
+        font-weight: 500;
+        color: #ebebeb;
+      }
+      @media only screen and (max-width: 768px) {
+        .nav-menu {
+          position: fixed;
+          left: -100%;
+          top: 5rem;
+          flex-direction: column;
+          background-color: #fff;
+
+          width: 100%;
+          border-radius: 10px;
+          text-align: center;
+          transition: 0.3s;
+          box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-menu.active {
+          left: 0;
+        }
+
+        .nav-item {
+          margin: 2.5rem 0;
+        }
+        .nav-link {
+          color: #101010;
+        }
+
+        .hamburger {
+          display: block;
+          cursor: pointer;
+        }
+        .hamburger.active .bar:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger.active .bar:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.active .bar:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+      }
+      @media (max-width: 600px) {
+        .image_about {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <nav class="navbar">
+          <a href="#" class="nav-logo icon">Cars</a>
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="#" class="nav-link">Services</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Contact</a>
+            </li>
+          </ul>
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </nav>
+      </header>
+      <section>
+        <div class="what_we_do">
+          <h1>What we do ?</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+            nostrum nam rem eum error provident accusantium ad neque temporibus
+            consequatur, veniam unde impedit repellendus illum ab esse labore
+            doloremque explicabo! Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Accusamus neque quam repudiandae, error culpa
+            recusandae tempore id illum laboriosam cum fugit repellat unde ex
+            quis vero similique fugiat vel dignissimos! Lorem ipsum, dolor sit
+            amet consectetur adipisicing elit. Eos ea doloribus quam magni
+            maiores, voluptates expedita consectetur est animi numquam assumenda
+            reiciendis. Repellendus, minus labore iure praesentium possimus
+            ullam facere? Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Corrupti dignissimos recusandae commodi quaerat architecto
+            quidem minima quia, quo sed nihil rerum! Sapiente sed facilis
+            voluptate commodi voluptatum, repellendus quos laboriosam?
+          </p>
+        </div>
+      </section>
+      <section>
+        <div class="image_about">
+          <img src="car1.jpg" alt="" />
+          <div class="text_content">
+            <h2>Our Vision</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
+              hic consequatur similique vitae amet, totam libero non dolorem
+              esse illum aut aperiam atque architecto? Illo rerum fugit sunt
+              dolorum Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Non rerum accusamus veritatis, natus, laudantium ratione aperiam
+              quae omnis provident odit totam ex sit veniam consectetur
+              perspiciatis velit! Natus, odit laboriosam?
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="how_we_do">
+          <h1>How we do it?</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+            nostrum nam rem eum error provident accusantium ad neque temporibus
+            consequatur, veniam unde impedit repellendus illum ab esse labore
+            doloremque explicabo! Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Accusamus neque quam repudiandae, error culpa
+            recusandae tempore id illum laboriosam cum fugit repellat unde ex
+            quis vero similique fugiat vel dignissimos! Lorem ipsum, dolor sit
+            amet consectetur adipisicing elit. Eos ea doloribus quam magni
+            maiores, voluptates expedita consectetur est animi numquam assumenda
+            reiciendis. Repellendus, minus labore iure praesentium possimus
+            ullam facere? Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Corrupti dignissimos recusandae commodi quaerat architecto
+            quidem minima quia, quo sed nihil rerum! Sapiente sed facilis
+            voluptate commodi voluptatum, repellendus quos laboriosam?
+          </p>
+        </div>
+      </section>
+      <section>
+        <div class="footer">
+          <div class="address">
+            <address>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
+              nostrum? Amet nam blanditiis necessitatibus explicabo animi atque
+            </address>
+          </div>
+          <div class="social_media">
+            <a href="">Facebook</a>
+            <a href="">Instagram</a>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+
+      hamburger.addEventListener("click", mobileMenu);
+
+      function mobileMenu() {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        background-color: black;
+        padding: 20px;
+        color: white;
+        border-radius: 10px;
+        margin: auto;
+      }
+      input {
+        margin: 5px;
+      }
+      button {
+        width: 100px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Voting Eligibility</h2>
+      <label for="">Enter Age</label>
+      <input id="age" type="number" />
+      <button onclick="calculate()">submit</button>
+      <span id="answer"></span>
+    </div>
+    <script>
+      function calculate() {
+        var age = document.getElementById("age").value;
+        var answer = document.getElementById("answer");
+        // if (age < 18) {
+        //   answer.innerHTML = "No you need to wait for " + (18 - age) + " years";
+        // } else {
+        //   answer.innerHTML = "yes";
+        // }
+        answer.innerHTML =
+          age < 18 ? "No you need to wait for " + (18 - age) + " years" : "yes";
+      }
+    </script>
+  </body>
+</html>

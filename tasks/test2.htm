@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <title>Report Card</title>
+    <style>
+      .report {
+        text-align: center;
+        width: 500px;
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        padding-bottom: 20px;
+      }
+      p {
+        font-size: larger;
+      }
+      table {
+        color: white;
+        background-color: black;
+      }
+      td {
+        width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="report">
+      <h1>Report Card</h1>
+      <h2>College XYZ</h2>
+      <div id="reportContainer"></div>
+    </div>
+    <script>
+      const reportContainer = document.querySelector("#reportContainer");
+      const report = JSON.parse(localStorage.getItem("report"));
+      if (report) {
+        const reportHTML = `
+       
+    <table align="center" border="1" bgcolor="white">
+     <tr>
+      <td>Name of Student</td>
+      <td align="center">${report.studentName}</td>
+      </tr>
+      <tr>
+      <td>Science</td>
+      <td align="center">${report.science}</td>
+      </tr>
+      <tr>
+      <td>Maths</td>
+      <td align="center">${report.maths}</td>
+      </tr>
+      <tr>
+      <td>Economics</td>
+      <td align="center">${report.economics}</td>
+      </tr>
+      <tr>
+      <td>History</td>
+      <td align="center">${report.history}</td>
+      </tr>
+      <tr>
+      <td>English</td>
+      <td align="center">${report.english}</td>
+      </tr>
+      <tr>
+      <td>Political Science</td>
+      <td align="center">${report.political}</td>
+      </tr>
+      <tr>
+      <td>Grade</td>
+      <td align="center">${report.grade}</td>
+      </tr>
+
+      <tr>
+      <td>Result</td>
+      <td align="center">${report.result}</td>
+      </tr>
+
+
+      </table>
+
+            
+         
+          
+        `;
+        reportContainer.innerHTML = reportHTML;
+      } else {
+        reportContainer.innerHTML = "No report found.";
+      }
+    </script>
+  </body>
+</html>

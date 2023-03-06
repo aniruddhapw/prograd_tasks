@@ -1,0 +1,77 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Calculator</title>
+    <style>
+      form {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+      }
+      .calculator {
+        background-color: black;
+        width: 300px;
+        height: auto;
+        padding: 10px;
+        border-radius: 10px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+      }
+      button {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <script>
+    function calculateAge() {
+      const dob = new Date(document.getElementById("age").value);
+      console.log(dob.getDate());
+
+      const today = new Date();
+      const ageInMilliseconds = today - dob;
+      console.log(ageInMilliseconds);
+      const ageInYears = Math.floor(
+        ageInMilliseconds / 1000 / 60 / 60 / 24 / 365.25
+      );
+      const ageInMonths = Math.floor(
+        (ageInMilliseconds / 1000 / 60 / 60 / 24 / 30.44) % 12
+      );
+      const ageInDays = Math.floor(
+        (ageInMilliseconds / 1000 / 60 / 60 / 24) % 30.44
+      );
+      //   let day = date.getDate();
+      //   let month = date.getMonth() + 1;
+      //   let year = date.getFullYear();
+
+      //   // This arrangement can be altered based on how we want the date's format to appear.
+      //   let currentDate = `${day}-${month}-${year}`;
+      //document.write(currentDate);
+      document.write(
+        "your age is " +
+          ageInYears +
+          " years " +
+          ageInMonths +
+          " months " +
+          ageInDays +
+          " days"
+      );
+      //   console.log(currentDate); // "17-6-2022"
+    }
+  </script>
+  <body>
+    <div class="calculator">
+      <form action="">
+        <h1>Find your age</h1>
+        <label for="age">Write your date of birth</label>
+        <input name="age" id="age" type="date" />
+        <button type="button" onclick="calculateAge()">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

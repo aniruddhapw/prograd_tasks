@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Loan calculator</title>
+    <style>
+      .Loan_calcualtor {
+        width: 400px;
+        height: 550px;
+        background-color: rgb(11, 10, 10);
+        box-shadow: 5px 5px rgb(46, 46, 46);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        padding: 20px 0px 0px 100px;
+        border-radius: 10px;
+        color: white;
+      }
+      p {
+        color: white;
+        font-size: 25px;
+        font-family: sans-serif;
+      }
+      h1 {
+        font-family: "Times New Roman", Times, serif sans-serif;
+        margin-left: 45px;
+        color: rgb(232, 235, 243);
+      }
+      input {
+        height: 33px;
+        width: 70%;
+        background-color: rgb(230, 238, 230);
+        font-size: 20px;
+        color: rgb(10, 9, 9);
+        padding: 7px;
+        border-radius: 5px;
+        border: none;
+      }
+      #calculate_op {
+        color: rgb(6, 5, 5);
+        font-size: 20px;
+        width: 100px;
+        height: 40px;
+        border-radius: 5px;
+        align-content: center;
+        margin-left: 100px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="Loan_calcualtor">
+      <h1>Loan Calculator</h1>
+      <p>
+        Loan amount:
+        <input type="number" id="amount" placeholder="Enter amount" />
+      </p>
+      <p>
+        Intrest Rate %:
+        <input step=".1" id="rate" placeholder="Enter rate" />
+      </p>
+      <p>
+        Number of Months:
+        <input type="number" id="time" placeholder="Enter time" />
+      </p>
+      <input
+        type="button"
+        value="Calculate"
+        id="calculate_op"
+        onclick="calculate()"
+      />
+      <p>
+        Total EMI:
+        <span style="font-weight: 20px; color: white" id="output"></span>
+      </p>
+    </div>
+    <script>
+      function calculate() {
+        amount = document.getElementById("amount").value;
+        rate = document.getElementById("rate").value;
+        time = document.getElementById("time").value;
+        const interest = (amount * (rate * 0.01)) / time;
+        let emi = (amount / time + interest).toFixed(2);
+        emi = emi.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        document.getElementById("output").innerHTML = emi;
+      }
+    </script>
+  </body>
+</html>

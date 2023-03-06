@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Number System Converter</title>
+    <style>
+      .container {
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+        background-color: black;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+      }
+      input,
+      select {
+        margin-top: 10px;
+      }
+      h1 {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Number System Converter</h1>
+
+      <label for="inputNumber">Enter a number:</label>
+      <input type="text" id="inputNumber" />
+
+      <br /><br />
+
+      <label for="inputSystem">Number system of input:</label>
+      <select id="inputSystem">
+        <option value="decimal">Decimal</option>
+        <option value="octal">Octal</option>
+        <option value="hexadecimal">Hexadecimal</option>
+        <option value="binary">Binary</option>
+      </select>
+
+      <br /><br />
+
+      <label for="outputSystem">Desired output number system:</label>
+      <select id="outputSystem">
+        <option value="decimal">Decimal</option>
+        <option value="octal">Octal</option>
+        <option value="hexadecimal">Hexadecimal</option>
+        <option value="binary">Binary</option>
+      </select>
+
+      <br /><br />
+
+      <button onclick="convert()">Convert</button>
+
+      <br /><br />
+
+      <label for="outputNumber">Converted number:</label>
+      <input type="text" id="outputNumber" disabled />
+    </div>
+    <script>
+      function convert() {
+        const inputNumber = document.getElementById("inputNumber").value;
+        const inputSystem = document.getElementById("inputSystem").value;
+
+        if (inputNumber === "") {
+          alert("Please enter a number.");
+          return;
+        }
+        if (inputSystem === "decimal" && !/^\d+$/.test(inputNumber)) {
+          alert("Please enter a valid decimal number.");
+          return;
+        }
+        if (inputSystem === "octal" && !/^[0-7]+$/.test(inputNumber)) {
+          alert("Please enter a valid octal number.");
+          return;
+        }
+        if (
+          inputSystem === "hexadecimal" &&
+          !/^[0-9a-fA-F]+$/.test(inputNumber)
+        ) {
+          alert("Please enter a valid hexadecimal number.");
+          return;
+        }
+        if (inputSystem === "binary" && !/^[01]+$/.test(inputNumber)) {
+          alert("Please enter a valid binary number.");
+          return;
+        }
+
+        let decimalNumber;
+        if (inputSystem === "decimal") {
+          decimalNumber = parseInt(inputNumber);
+        } else if (inputSystem === "octal") {
+          decimalNumber = parseInt(inputNumber, 8);
+        } else if (inputSystem === "hexadecimal") {
+          decimalNumber = parseInt(inputNumber, 16);
+        } else if (inputSystem === "binary") {
+          decimalNumber = parseInt(inputNumber, 2);
+        }
+
+        let outputNumber;
+        const outputSystem = document.getElementById("outputSystem").value;
+        if (outputSystem === "decimal") {
+          outputNumber = decimalNumber.toString(10);
+        } else if (outputSystem === "octal") {
+          outputNumber = decimalNumber.toString(8);
+        } else if (outputSystem === "hexadecimal") {
+          outputNumber = decimalNumber.toString(16);
+        } else if (outputSystem === "binary") {
+          outputNumber = decimalNumber.toString(2);
+        }
+
+        document.getElementById("outputNumber").value = outputNumber;
+      }
+    </script>
+  </body>
+</html>
